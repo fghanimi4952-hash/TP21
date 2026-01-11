@@ -2,31 +2,28 @@
 
 Ce projet met en place une architecture microservices avec Spring Cloud Eureka pour la découverte de services et WebClient pour la communication entre services.
 
-## 📚 Ce qui sera appris
+##  Ce qui sera appris
 
 - Mettre en place Eureka Server
 - Enregistrer des microservices (Eureka Client)
 - Utiliser application.yml (YAML)
 - Appeler un service par son nom Eureka avec WebClient
 
-## 🔧 Prérequis techniques
+##  Prérequis techniques
 
 - Java 17+
 - Maven
 - MySQL local (port 3306) + utilisateur (ex: root)
 - Postman ou curl
 
-## 📋 Structure du projet
+##  Structure du projet
+<img width="465" height="681" alt="Capture d’écran 2026-01-11 à 12 31 49" src="https://github.com/user-attachments/assets/52e8add8-0467-4243-8320-100c95535f22" />
 
-```
-TP21/
-├── eureka-server/          # Serveur de découverte Eureka (port 8761)
-├── service-client/         # Service de gestion des clients (port 8081)
-├── service-car/           # Service de gestion des voitures (port 8082)
-└── README.md
-```
 
-## 🚀 Installation et démarrage
+
+
+
+##  Installation et démarrage
 
 ### Étape 0 : Préparer l'environnement
 
@@ -95,12 +92,12 @@ mvn spring-boot:run
 curl http://localhost:8082/api/test/client/1
 ```
 
-## 🧪 Tests end-to-end (scénario complet)
+##  Tests end-to-end (scénario complet)
 
 ### Ordre de lancement
-1. ✅ eureka-server (8761)
-2. ✅ service-client (8081)
-3. ✅ service-car (8082)
+1.  eureka-server (8761)
+2.  service-client (8081)
+3.  service-car (8082)
 
 ### Scénario de test
 
@@ -161,7 +158,7 @@ curl http://localhost:8082/api/cars
 curl http://localhost:8082/api/cars/byClient/1
 ```
 
-## ⚠️ Dépannage (erreurs fréquentes)
+##  Dépannage (erreurs fréquentes)
 
 ### 1. "No instances available for SERVICE-CLIENT"
 
@@ -210,7 +207,7 @@ curl http://localhost:8082/api/cars/byClient/1
 - Vérifier `@RequestMapping` dans le controller
 - Vérifier que le service est bien démarré
 
-## 📝 Notes importantes
+##  Notes importantes
 
 ### Pourquoi `block()` est accepté ici ?
 - Approche simple pour comprendre le mécanisme (TP débutant)
@@ -220,14 +217,14 @@ curl http://localhost:8082/api/cars/byClient/1
 - Deux bases de données différentes → JPA ne peut pas faire de join réel entre DB séparées
 - Pattern correct en microservices : `id` + appel HTTP
 
-## 🗂️ Bases de données créées automatiquement
+##  Bases de données créées automatiquement
 
 - **clientservicedb** : Base de données pour service-client
 - **carservicedb** : Base de données pour service-car
 
 Les tables sont créées automatiquement grâce à `ddl-auto: update` dans `application.yml`
 
-## 📌 Configuration MySQL
+##  Configuration MySQL
 
 Si votre configuration MySQL est différente, modifiez dans `application.yml` de chaque service :
 ```yaml
@@ -237,7 +234,7 @@ spring:
     password:             # Votre mot de passe MySQL
 ```
 
-## 🎯 Points clés du TP
+##  Points clés du TP
 
 1. **Eureka Server** : Registre centralisé des services
 2. **Eureka Client** : Enregistrement automatique des services
@@ -247,4 +244,4 @@ spring:
 
 ---
 
-**Bon TP ! 🚀**
+
