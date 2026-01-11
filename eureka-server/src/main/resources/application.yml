@@ -1,0 +1,17 @@
+# Configuration du serveur Eureka
+server:
+  port: 8761
+
+# Configuration Eureka Client
+eureka:
+  client:
+    # Le serveur Eureka ne s'enregistre pas lui-même comme client
+    register-with-eureka: false
+    # Il ne récupère pas de registre, il le fournit
+    fetch-registry: false
+
+# Configuration des logs pour une sortie console plus propre
+logging:
+  level:
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF
